@@ -1,0 +1,103 @@
+.container{
+    margin: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    @include small{
+        width: 750px;
+    }
+    @include medium{
+        width: 970px;
+    }
+    @include large{
+        width: 1200px;
+    }
+}
+
+
+.main-heading{
+    width: fit-content;
+    margin: auto;
+    font-weight: bold;
+    padding: 15px 20px;
+    position: relative;
+    overflow: hidden;
+    span:nth-child(1){
+        width: 100%;
+        height: 2px;
+        background-color: $main-color;
+        position: absolute;
+        top: 0;
+        left: 0;
+        animation: fill1 2s linear infinite;
+    }
+    span:nth-child(2){
+        width: 2px;
+        height: 100%;
+        background-color: $main-color;
+        position: absolute;
+        top: 0;
+        right: 0;
+        animation: fill2 2s linear infinite;
+        animation-delay: 1s;
+    }
+    span:nth-child(3){
+        width: 100%;
+        height: 2px;
+        background-color: $main-color;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        animation: fill3 2s linear infinite;
+    }
+    span:nth-child(4){
+        width: 2px;
+        height: 100%;
+        background-color: $main-color;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        animation: fill4 2s linear infinite;
+        animation-delay: 1s;
+    }
+}
+
+@include keyframes(fill1){
+    0%{
+        transform: translateX(-100%);
+    }
+    100%{
+        transform: translateX(100%)
+    }
+}
+@include keyframes(fill2){
+    0%{
+        transform: translateY(-100%);
+    }
+    100%{
+        transform: translateY(100%)
+    }
+}
+@include keyframes(fill3){
+    0%{
+        transform: translateX(100%);
+    }
+    100%{
+        transform: translateX(-100%)
+    }
+}
+@include keyframes(fill4){
+    0%{
+        transform: translateY(100%);
+    }
+    100%{
+        transform: translateY(-100%)
+    }
+}
+
+.complete{
+    background-color: rgba($color: green, $alpha: 0.5) !important;
+}
+
+.failed{
+    background-color: rgba($color: red, $alpha: 0.5) !important;
+}
