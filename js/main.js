@@ -48,6 +48,7 @@ function addtask(){
         box.classList.add("complete");
         box.setAttribute("data-status","complete");
         task.status = "complete";
+        additemtolocalstorage()
     }
     optionsdiv.appendChild(done)
     
